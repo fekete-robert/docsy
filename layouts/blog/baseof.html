@@ -5,6 +5,7 @@
   </head>
   <body class="td-{{ .Kind }} td-blog {{- with .Page.Params.body_class }} {{ . }}{{ end }}">
     {{ partial "hooks/body-start.html" . -}}
+    {{ partial "google-tagmanager-body.html" . -}}
     <header>
       {{ partial "navbar.html" . }}
     </header>
