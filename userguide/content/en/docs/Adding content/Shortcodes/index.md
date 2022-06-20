@@ -264,6 +264,42 @@ There are several tools you can use to check if a website can be embedded via if
 in the response headers." you __CAN__ embed it, but when the test says "Great! X-Frame-Options header was found in the HTTP response headers as highlighted below.", you __CANNOT__ - unless it has been explicitly enabled for your site.
 {{% /alert %}}
 
+### xref
+
+The `xref` shortcode allows you to reference a page (or a heading within a page), and automatically creates a link to that section with the title of the section. That way the title of the section in the link is updated automatically even if the title is changed (provided the anchor of the heading does not change).
+
+For example, if you have the following section in your `/docs/overview/_index.md` file:
+
+```markdown
+## Technical overview {#technical-overview}
+```
+
+You can add a cross-reference to this section like this:
+
+```
+For details, see {{%/* xref "/docs/overview/_index.md#technical-overview" */%}}.
+```
+
+This wil be rendered as ```For details, see <a href="/docs/overview/#technical-overview">Technical overview</a>.```
+
+Cross-referencing a filename without an anchor creates a link to the file, using the title in the frontmatter of the file as the link text.
+
+Limitations:
+
+- You cannot use the xref shortcode to create links within the same page.
+- If the heading has a custom ID set (for example, ```## Title {#my-id}```), you must use that in the xref shortcode.
+- The referenced header must appear in the [Hugo .TableOfContents variable](https://gohugo.io/variables/page/) of the page. This means that:
+
+  - You cannot reference headings included from headless files.
+  - H4-H6 headings aren't included in the TableOfContents by default, so cross-references to them will fail. You can configure which heading levels are included in your Hugo configuration file:
+
+      ```toml
+      [markup]
+      [markup.tableOfContents]
+        endLevel = 6
+        startLevel = 2
+      ```
+
 ## Tabbed panes
 
 Sometimes it's very useful to have tabbed panes when authoring content. One common use-case is to show multiple syntax highlighted code blocks that showcase the same problem, and how to solve it in different programming languages. As an example, the tabbed pane below shows the language-specific variants of the famous `Hello world!` program one usually writes first when learning a new programming language:
