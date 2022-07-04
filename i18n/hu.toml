@@ -38,33 +38,33 @@ other = "Utolsó módosítás"
 [post_edit_this]
 other = "Oldal szerkesztése"
 [post_create_child_page]
-other = "Create child page"
+other = "Aloldal létrehozása"
 [post_create_issue]
-other = "Dokumentáció issue létrehozása"
+other = "Dokumentáció probléma létrehozása"
 [post_create_project_issue]
-other = "Projekt issue létrehozása"
+other = "Projekt probléma létrehozása"
 # TODO: this structure will not work in Hungarian
 #   so I left it as is
 [post_posts_in]
 other = "Posts in"
 [post_reading_time]
-other = "minute read"
+other = "perces olvasmány"
 [post_less_than_a_minute_read]
-other = "less than a minute"
+other = "egyperces olvasmány"
 
 # Print support
 [print_printable_section]
-other = "This is the multi-page printable view of this section."
+other = "Ez ennek a fejezetnek a többoldalas, nyomtatható nézete."
 [print_click_to_print]
-other = "Click here to print"
+other = "Nyomtatás"
 [print_show_regular]
-other = "Return to the regular view of this page"
+other = "Visszatérés a normál nézethez"
 [print_entire_section]
-other = "Print entire section"
+other = "Egész fejezet nyomtatása"
 
 # Community
 [community_join]
-other = "Join the {{ .Site.Title }} community"
+other = "Csatlakozz a {{ .Site.Title }} közösséghez!"
 [community_introduce]
 other = "{{ .Site.Title }} is an open source project that anyone in the community can use, improve, and enjoy. We'd love you to join us! Here's a few ways to find out what's happening and get involved."
 [community_learn]
