@@ -19,6 +19,7 @@
       {{- .Site.Title -}}
     </span>
     {{- /**/ -}}
+    {{ if .Site.Params.version }}<span class="font-weight-bold">{{ .Site.Params.version }}</span>{{ end }}
   </a>
   <div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
     <ul class="navbar-nav mt-2 mt-lg-0">
