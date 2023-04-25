@@ -2,6 +2,13 @@
 <input type="search" class="form-control td-search-input" placeholder="&#xf002; {{ T "ui_search" }}" aria-label="{{ T "ui_search" }}" autocomplete="off">
 {{ else if .Site.Params.algolia_docsearch -}}
 <div id="docsearch"></div>
+{{ else if .Site.Params.pagefind_search -}}
+<div id="search"></div>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search" });
+    });
+</script>
 {{ else if .Site.Params.offlineSearch -}}
 {{ $offlineSearchIndex := resources.Get "json/offline-search-index.json" | resources.ExecuteAsTemplate "offline-search-index.json" . -}}
 {{ if hugo.IsProduction -}}

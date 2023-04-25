@@ -37,6 +37,11 @@
   crossorigin="anonymous"></script>
 {{ end -}}
 
+{{ if .Site.Params.pagefind_search -}}
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script defer src="/_pagefind/pagefind-ui.js" type="application/javascript"></script>
+{{ end -}}
+
 {{ if .Site.Params.prism_syntax_highlighting -}}
 <link rel="stylesheet" href="{{ "css/prism.css" | relURL }}"/>
 {{ end -}}
